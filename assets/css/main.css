@@ -20,6 +20,7 @@
     --white: #fff;
     --black: #000;
     --gray :#e2e2e2;
+    --primary:#0056D2;
 
 
 }
@@ -79,9 +80,11 @@ p a:focus {
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: 70vh;
+
     }
 
-    .top-bar{
+    /* .top-bar{
 
         background-color: #F2F2F2;
         width: 100vw;
@@ -100,7 +103,7 @@ p a:focus {
             background: linear-gradient(to right, #ec008c, #fc6767);
             -webkit-background-clip: text;
             color: transparent;
-    }
+    } */
 
 
 
@@ -117,13 +120,17 @@ p a:focus {
 
 
 
-    /* .video-container {
+    .bg-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
+    /* background-image: url(../images/bg/banner.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
     }
     
     #background-video {
@@ -139,10 +146,10 @@ p a:focus {
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to Right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)); 
+        background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)); 
         pointer-events: none; 
         z-index: 1;
-    } */
+    }
     
     /* Navbar */
     .navbar {
@@ -151,29 +158,54 @@ p a:focus {
         position: fixed;
         top: 50;
         left: 0;
-        background-color: transparent;
-        color: #000;
+        justify-content: center;
+       
+        color: #fff;
         z-index: 1000;
         transition: background-color 0.3s;
+        display: flex;
+
+        
+    
     }
+
+    .navbar-container{
+        /* glass effect */
+        background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+        border-radius: 90px; /* Rounded corners */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        backdrop-filter: blur(10px); /* Blurred background */
+        -webkit-backdrop-filter: blur(10px); /* Safari support */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+
+        width: fit-content;
+        padding: 7px 9px 7px 15px; /* Top, Right, Bottom, Left */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+   
+        
+    }
+
+
     
     /* Transparent background when navbar is not scrolled */
-    .navbar:not(.scrolled) {
+    /* .navbar:not(.scrolled) {
         background-color: transparent;
        
-    }
+    } */
     
     /* Navbar background after scrolling */
-    .navbar.scrolled {
-        background-color: #fff; /* Dark background after scrolling */
+    /* .navbar.scrolled {
+        background-color: #fff; 
         border-bottom: solid 1px #c5c5c5;
         top: 0;
-    }
+    } */
     
     /* Navbar background when dropdown is open */
-    .navbar.clicked {
-        background-color: #fff; /* Dark background when dropdown is open */
-    }
+    /* .navbar.clicked {
+        background-color: #000;
+    } */
     
     .navbar-left{
     
@@ -205,7 +237,7 @@ p a:focus {
     
     .nav-menu li a {
         padding: 10px 15px;
-        color: #000;
+        color: var(--gray);
         text-decoration: none;
         transition: color 0.3s;
     }
@@ -358,20 +390,19 @@ p a:focus {
     }
     
     .login-link, .contact-button {
-        color: var(--black);
+        color: var(--white);
         text-decoration: none;
         margin-left: 20px;
     }
     
     .contact-button {
-        background-color: var(--white);
-        padding: 15px 25px;
+        background-color: var(--primary);
+        padding: 10px 25px;
      
-        border-radius: 30px;
+        border-radius: 35px;
         cursor: pointer;
-        color: var(--black);
-     
-        border: solid var(--gray) 1px;
+        color: var(--white);
+        border: solid #156be4 1px;
        
     }
     
@@ -386,7 +417,7 @@ p a:focus {
     .hamburger span {
         width: 25px;
         height: 3px;
-        background: var(--black);
+        background: var(--white);
         margin: 4px;
     }
     
@@ -399,6 +430,13 @@ p a:focus {
     @media (max-width: 768px) {
 
 
+        .header {
+           
+            height:70vh;
+        
+            }
+
+
     
         /* Navbar */
         .navbar {
@@ -406,6 +444,12 @@ p a:focus {
             padding: 3% 3%;
             top: 0;
            
+        }
+
+        .navbar-container {
+            
+            width: 100%;
+            border-radius: 10px;
         }
             .nav-menu {
             display: none;
@@ -416,10 +460,18 @@ p a:focus {
             left: 0;
             width: 100%;
             padding: 20px 0;
+
+            /* glass effect */
+            background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            backdrop-filter: blur(10px); /* Blurred background */
+            -webkit-backdrop-filter: blur(10px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
         }
     
         .nav-menu li a {
-            color: var(--black);
+            color: var(--white);
             padding: 10px 20px;
             display: block;
         }
@@ -439,132 +491,98 @@ p a:focus {
     
     
     
-    /* strat header section start  */
-
-
-.header-content{
-
-    width: 100%;
-    
-    padding: 0 14%;
-    padding-top: 15%;
-    padding-bottom: 5%;
-    color: var(--black);
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-}
-
-.header-content-title{
-
-
-    font-size: 4rem;
-    
-}
-
-.content-left{
-
-    width: 50%;
-}
-
-.content-right{
-
-    display: flex;
-    width: 30%;
-    gap: 10px;
-    justify-content: end;
-
-    
-}
-
-
-
-
-
-.header-para{
-
-    
-    margin-top: 10px;
-    width: 90%;
-}
-
-.content-btn{
-
-
-
-    color: var(--white);
-    padding: 5% 8%;
-    margin-top: 30px;
-    border-radius: 40px;
-    text-align: center;
-    cursor: pointer;
-    
-
-
-
-}
-
-.content-btn:nth-child(1){
-
-   background-color: var(--black);
-}
-
-.content-btn:nth-child(2){
-
-    background-color: var(--white);
-    border: solid var(--gray) 1px;
-    color: var(--black);
-}
-
-
-@media (max-width: 768px) {
+    /* end header section start  */
 
 
 
     .header-content{
 
-      
-        padding: 25% 0%;
-        width: 100vw;
-        flex-direction: column;
-        text-align: center;
+        height: 30vh;
+        background-color: var(--black);
+        display: flex;
+        color: var(--white);
+        justify-content: center;
         align-items: center;
-        
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20%;
+        text-align: center;
+
+
     }
 
-    .header-content-title{
+    .title-header{
 
+        font-weight: 300;
+        font-size: 6rem;
+        font-family: "Inter";
+      
+    }
+    .para-header{
 
         font-size: 2rem;
-      
-    }
-    .content-left{
 
-        width: 100%;
     }
+
     .content-right{
 
-        flex-direction: column;
-        width: 80%;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 20px;
+        display: flex;
     }
 
-    .header-para{
+    .header-cta {
+        background-color: var(--primary);
+        padding: 15px 30px;
+     
+        border-radius: 35px;
+        cursor: pointer;
+        color: var(--white);
+        border: solid #156be4 1px;
+       
+    }
+    .header-cta2{
 
-        width: 100%;
-        margin-bottom: 10px;
+        padding: 15px 30px;
+     
+        border-radius: 35px;
+        cursor: pointer;
+        color: var(--white);
+        border: solid var(--gray) 1px;
+
     }
 
-    .content-btn{
 
-       width: 100% !important;
-       margin-top: 0 !important;
+
+
+
+@media (max-width: 768px) {
+
+
+    .header-content{
+
+       
+        padding: 0 2%;
+        text-align: center;
     
+
+
     }
 
+    .title-header{
 
+        font-weight: 300;
+        font-size: 3rem;
+        font-family: "Inter";
 
+        margin-bottom:10px ;
+       
+      
+    }
+    .para-header{
+
+        font-size: 1rem;
+
+    }
  
 }
 
@@ -576,7 +594,7 @@ p a:focus {
 .work{
 
     height: 800px;
-    background-image: url(../images/bg/NxdXZ0NnRZlMMd9xIvE1JnQmI.avif);
+   
 
 }
 
