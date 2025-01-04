@@ -80,7 +80,10 @@ p a:focus {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 70vh;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
 
     }
 
@@ -172,7 +175,7 @@ p a:focus {
     .navbar-container{
         /* glass effect */
         background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
-        border-radius: 90px; /* Rounded corners */
+        border-radius: 10px; /* Rounded corners */
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         backdrop-filter: blur(10px); /* Blurred background */
         -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -399,7 +402,7 @@ p a:focus {
         background-color: var(--primary);
         padding: 10px 25px;
      
-        border-radius: 35px;
+        border-radius: 5px;
         cursor: pointer;
         color: var(--white);
         border: solid #156be4 1px;
@@ -498,7 +501,6 @@ p a:focus {
     .header-content{
 
         height: 30vh;
-        background-color: var(--black);
         display: flex;
         color: var(--white);
         justify-content: center;
@@ -507,6 +509,8 @@ p a:focus {
         gap: 30px;
         padding: 0 20%;
         text-align: center;
+        position: absolute;
+        bottom: 0;
 
 
     }
@@ -534,7 +538,7 @@ p a:focus {
         background-color: var(--primary);
         padding: 15px 30px;
      
-        border-radius: 35px;
+        border-radius: 10px;
         cursor: pointer;
         color: var(--white);
         border: solid #156be4 1px;
@@ -544,7 +548,7 @@ p a:focus {
 
         padding: 15px 30px;
      
-        border-radius: 35px;
+        border-radius: 10px;
         cursor: pointer;
         color: var(--white);
         border: solid var(--gray) 1px;
@@ -588,17 +592,6 @@ p a:focus {
 
 
 
-/* ================== start secton work ============= */
-
-
-.work{
-
-    height: 800px;
-   
-
-}
-
-
 
 
     
@@ -612,8 +605,9 @@ p a:focus {
 /* Section Styling */
 .story-section {
     width: 100%;
-    padding: 10% 14%;
+    padding: 0% 14%;
     background-color: var(--black);
+    padding-top: 200px;
 }
 
 .story-section-header {
@@ -624,9 +618,10 @@ p a:focus {
 }
 
 .story-section-title {
-    font-size: 5rem;
-    font-weight: 100;
-    color: var(--white);
+    font-size: 3rem;    
+    font-weight: 600;
+    color: #333333;
+
 }
 
 .control-buttons {
@@ -669,7 +664,7 @@ p a:focus {
     margin-right: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: inline-block;
-    width: calc(100% / 1.5 - 10px); /* Show 4 cards per screen width */
+    width: calc(100% / 2.5 - 10px); /* Show 4 cards per screen width */
     
   
 }
@@ -703,9 +698,9 @@ p a:focus {
     }
     
     .story-section-title {
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: 100;
-        color: var(--white);
+        color: #333333;
     }
 
     .control-button {
@@ -730,3 +725,207 @@ p a:focus {
 
 
 /* end secton success story */
+
+
+/* ================== start secton work ============= */
+
+
+.about{
+
+    height: 50vh; /* To allow scrolling */
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  text-align: center;
+  background-color: var(--black);
+  color: #333333;
+
+   
+
+}
+
+.container-about {
+    padding: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    font-size: 3rem;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.spacer {
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+/* ================== end secton work ============= */
+
+
+
+/* ================== end client work ============= */
+
+.clients{
+
+    width: 100%;
+
+    background-color: var(--black);
+    padding: 5% 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.clients-title{
+
+    text-align: center;
+    color: #333333;
+    font-size: 1.25em;
+
+}
+
+.ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ticker-track {
+    display: flex;
+    animation: scroll 10s linear infinite;
+  }
+  
+  .ticker-item {
+    flex: 0 0 auto;
+    padding: 0 20px;
+  }
+  
+  .ticker-item img {
+    height: 50px;
+    width: auto;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+
+  /* service section */
+
+  .service{
+
+    padding: 0 15%;
+    
+    background-color: var(--black);
+    display: flex;
+    gap: 10px;
+    
+
+  }
+
+  .service-content{
+
+
+    width: 100%;
+    border-radius: 10px;
+    background-color: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+
+  }
+
+
+  .service-card-title{
+
+    color: #F7F8F8;
+    font-size: 2rem;
+
+  }
+
+  .service-card-img{
+
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+
+
+  .service-card-content{
+
+
+    padding: 6% 7%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    
+
+    
+  }
+
+  
+
+  .service-card-para{
+
+    color: #696969;
+    font-size: 1.2rem;
+
+
+  }
+
+  .service-contact-button{
+
+    background-color: var(--primary);
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--white);
+    border: solid #156be4 1px;
+    width: fit-content;
+    margin-top: 10px;
+
+  }
+
+  .service-contact-button-black{
+
+   
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #6d6d6d;
+    border: solid #202020 1px;
+    width: fit-content;
+    margin-top: 10px;
+
+  }
+
+
+  @media (max-width: 768px) {
+
+    .service-content{
+
+        flex-direction: column;
+    }
+
+  }

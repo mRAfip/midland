@@ -58,7 +58,7 @@
 
       <div class="bg-container">
           <video autoplay muted loop id="background-video">
-            <source src="./assets/video/banner2.mp4" type="video/mp4">
+            <source src="./assets/video/banner3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
 
@@ -142,26 +142,33 @@
 
 <!-- Content Section -->
 
+        <div class="header-content">
+
+
+            <div class="content-left">
+
+                <h1 class="title-header">#1 Digital agency</h1>
+                <p class="para-header"> Website  |  Ecommerce  |  UI UX Design</p>
+            </div>
+            <div class="content-right">
+
+                <a class="header-cta">
+                    Book a Call ››
+                </a>
+                <a class="header-cta2">
+                    View work 
+                </a>
+            </div>
+
+        </div>
+
 </header>
 
 <!-- end header-->
 
-<section class="header-content">
+<section >
 
-    <div class="content-left">
-
-        <h1 class="title-header">#1 Digital agency</h1>
-         <p class="para-header"> Website  |  SEO  |  Ecommerce  |  UI UX Design</p>
-    </div>
-    <div class="content-right">
-
-        <a class="header-cta">
-            Cook a Call ››
-        </a>
-        <a class="header-cta2">
-            View work 
-        </a>
-    </div>
+   
 
 </section>
 
@@ -232,18 +239,107 @@
 </section>
 
 
+  <!-- start section success stories -->
 
-<!-- start client section -->
 
-<section class="work">
+<!-- start about section -->
 
-    
+<section class="about">
+
+
+
+    <div class="container-about">
+        <h2 class="reveal">To build digital experiences that inspire confidence and drive meaningful connections.</h2>
+        
+    </div>
+
+
+</section>
+
+<section class="clients">
+
+    <h3 class="clients-title">Trusted by Top Organizations Including</h3>
+
+    <div class="ticker">
+        <div class="ticker-track">
+          <div class="ticker-item"><img src="logo1.png" alt="Client 1"></div>
+          <div class="ticker-item"><img src="logo2.png" alt="Client 2"></div>
+          <div class="ticker-item"><img src="logo3.png" alt="Client 3"></div>
+          <div class="ticker-item"><img src="logo4.png" alt="Client 4"></div>
+          <div class="ticker-item"><img src="logo5.png" alt="Client 5"></div>
+          <!-- Repeat logos for seamless scrolling -->
+          <div class="ticker-item"><img src="logo1.png" alt="Client 1"></div>
+          <div class="ticker-item"><img src="logo2.png" alt="Client 2"></div>
+          <div class="ticker-item"><img src="logo3.png" alt="Client 3"></div>
+          <div class="ticker-item"><img src="logo4.png" alt="Client 4"></div>
+          <div class="ticker-item"><img src="logo5.png" alt="Client 5"></div>
+        </div>
+      </div>
 
 </section>
 
 
+<section class="service">
 
-    <!-- start section success stories -->
+    <div class="service-content">
+
+        <img class="service-card-img" src="./assets/images/bg/1.avif"/>
+
+        <div class="service-card-content">
+
+            <h2 class="service-card-title">Web Designing</h2>
+            <p class="service-card-para">Our web design services craft meaningful websites that not 
+                only impress visitors but also rank higher in search results.</p>
+    
+                <a class="service-contact-button">
+                    Book a Call ››
+                </a>
+
+        </div>
+
+
+    </div>
+    <div class="service-content">
+
+        <img class="service-card-img" src="./assets/images/bg/2.avif"/>
+
+        <div class="service-card-content">
+
+            <h2 class="service-card-title">E-commerce</h2>
+            <p class="service-card-para">Optimizing your website will help you rank higher
+                 in search results, leading to increased organic traffic & qualified leads.</p>
+    
+                <a class="service-contact-button-black">
+                    Book a Call ››
+                </a>
+
+        </div>
+
+
+    </div>
+    <div class="service-content">
+
+        <img class="service-card-img" src="./assets/images/bg/3.avif"/>
+
+        <div class="service-card-content">
+
+            <h2 class="service-card-title">UI-UX Designing</h2>
+            <p class="service-card-para">Our human-centered approach ensures your apps, 
+                software, and platforms are not only beautiful but also a joy to use.</p>
+    
+                <a class="service-contact-button-black">
+                    Book a Call ››
+                </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+  
 
 
 <script>
@@ -406,6 +502,40 @@
 </script>
 
 
+<!-- about etxt reveal  -->
+
+<script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const revealPoint = 150; 
+            if (elementTop < windowHeight - revealPoint) {
+                el.classList.add('visible');
+            } else {
+                el.classList.remove('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+
+    revealOnScroll();
+</script>
+
+
+<!-- script for ticker -->
+
+
+<script>
+    const tickerTrack = document.querySelector(".ticker-track");
+
+    // Clone the content for seamless scrolling
+    const clone = tickerTrack.innerHTML;
+    tickerTrack.innerHTML += clone;
+</script>
 
 
 
